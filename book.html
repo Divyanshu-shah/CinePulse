@@ -3,64 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your movie tickets online — Choose your seats, pick a date, and enjoy the show. CinePulse ticket booking.">
+  <title>Book Tickets — CinePulse</title>
+  <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="book.css">
-  <title>Book Tickets - CinePulse</title>
 </head>
-
 <body>
-  <div class="nav1">
-    <div class="title">
-      <h1>CinePulse</h1>
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__logo-icon">🎬</span>
+      <a href="index.html" class="navbar__logo">CinePulse</a>
     </div>
-  </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="book.html" class="active">Book Tickets</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="navbar__search">
+      <span class="navbar__search-icon">🔍</span>
+      <input type="text" placeholder="Search..." id="searchInput">
+    </div>
+    <div class="navbar__hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <div class="nav2">
-    <a href="index.html">Home</a>
-    <a href="movie.html">Movies</a>
-    <a href="event.html">Events</a>
-    <a href="#book" id="active">Book Here</a>
-    <a href="#home" id="about">About Us</a>
-  </div>
+  <!-- Main Content -->
+  <main class="booking-page">
+    <div class="container">
+      <div class="booking-layout">
 
-  <div class="tbook">
-    <p>Please fill out these details for confirmation of ticket</p>
+        <!-- Left: Form -->
+        <div class="booking-card reveal">
+          <div class="booking-card__header">
+            <span class="booking-card__icon">🎟️</span>
+            <div>
+              <h1 class="booking-card__title">Book Your Tickets</h1>
+              <p class="booking-card__subtitle">Fill in the details below to reserve your seats</p>
+            </div>
+          </div>
 
-    <form id="bookingForm">
-      <fieldset>
-        <label for="first-name">Enter Your Name:
-          <input id="first-name" name="first-name" type="text" required />
-        </label>
+          <form id="bookingForm" class="booking-form" novalidate>
+            <!-- Personal Details -->
+            <div class="form-section">
+              <h3 class="form-section__title">Personal Details</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="first-name" class="form-label">Full Name</label>
+                  <input id="first-name" name="first-name" type="text" class="form-input" placeholder="Enter your full name" required>
+                  <span class="form-error" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="mobile" class="form-label">Mobile Number</label>
+                  <input id="mobile" name="mobile" type="tel" class="form-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}" maxlength="10">
+                  <span class="form-error" id="mobileError"></span>
+                </div>
+              </div>
+            </div>
 
-        <label for="mobile">Enter Your Mobile No.:
-          <input id="mobile" name="mobile" type="text" required pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" />
-        </label>
+            <!-- Booking Details -->
+            <div class="form-section">
+              <h3 class="form-section__title">Booking Details</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="tickets" class="form-label">Number of Tickets</label>
+                  <input id="tickets" name="tickets" type="number" class="form-input" placeholder="1-10" required min="1" max="10">
+                  <span class="form-error" id="ticketsError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="date" class="form-label">Preferred Date</label>
+                  <input id="date" name="date" type="date" class="form-input" required>
+                  <span class="form-error" id="dateError"></span>
+                </div>
+              </div>
+            </div>
 
-        <label for="tickets">No. Of Tickets:
-          <input id="tickets" name="tickets" type="number" required min="1" max="10" />
-        </label>
+            <!-- Seat Type -->
+            <div class="form-section">
+              <h3 class="form-section__title">Select Seat Type</h3>
+              <div class="seat-options">
+                <label class="seat-card">
+                  <input type="radio" name="seat" value="Silver" required>
+                  <div class="seat-card__content">
+                    <div class="seat-card__icon">🪑</div>
+                    <div class="seat-card__name">Silver</div>
+                    <div class="seat-card__price">₹500</div>
+                  </div>
+                </label>
+                <label class="seat-card">
+                  <input type="radio" name="seat" value="Gold">
+                  <div class="seat-card__content">
+                    <div class="seat-card__icon">⭐</div>
+                    <div class="seat-card__name">Gold</div>
+                    <div class="seat-card__price">₹1,000</div>
+                  </div>
+                </label>
+                <label class="seat-card">
+                  <input type="radio" name="seat" value="Diamond">
+                  <div class="seat-card__content">
+                    <div class="seat-card__icon">💎</div>
+                    <div class="seat-card__name">Diamond</div>
+                    <div class="seat-card__price">₹1,500</div>
+                  </div>
+                </label>
+              </div>
+            </div>
 
-        <label for="date">Date (dd/mm/yyyy):
-          <input id="date" name="date" type="text" required placeholder="dd/mm/yyyy" />
-        </label>
-      </fieldset>
+            <!-- Terms & Submit -->
+            <div class="form-section">
+              <label class="checkbox-label">
+                <input type="checkbox" id="terms-and-conditions" required>
+                <span class="checkbox-custom"></span>
+                <span>I accept the <a href="#" class="text-accent">terms and conditions</a></span>
+              </label>
 
-      <fieldset>
-        <h4>Seat Type:</h4>
-        <label><input type="radio" name="seat" value="Silver" required /> Silver (Rs.500)</label>
-        <label><input type="radio" name="seat" value="Gold" required /> Gold (Rs.1000)</label>
-        <label><input type="radio" name="seat" value="Diamond" required /> Diamond (Rs.1500)</label>
-      </fieldset>
+              <button type="submit" class="submit-btn">
+                <span class="submit-btn__text">🎬 Confirm Booking</span>
+                <span class="submit-btn__loading" style="display:none;">Booking...</span>
+              </button>
+            </div>
+          </form>
+        </div>
 
-      <label for="terms-and-conditions">
-        <input class="inline" id="terms-and-conditions" type="checkbox" required />
-        I accept the terms and conditions
-      </label>
+        <!-- Right: Summary Sidebar -->
+        <aside class="booking-sidebar reveal-right">
+          <div class="summary-card">
+            <h3 class="summary-card__title">🍿 Booking Summary</h3>
+            <div class="summary-card__row">
+              <span>Tickets</span>
+              <span id="summaryTickets">—</span>
+            </div>
+            <div class="summary-card__row">
+              <span>Seat Type</span>
+              <span id="summarySeat">—</span>
+            </div>
+            <div class="summary-card__row">
+              <span>Date</span>
+              <span id="summaryDate">—</span>
+            </div>
+            <div class="summary-card__divider"></div>
+            <div class="summary-card__row summary-card__row--total">
+              <span>Total</span>
+              <span id="summaryTotal">₹0</span>
+            </div>
+          </div>
 
-      <input type="submit" value="Book Ticket" />
-    </form>
-  </div>
+          <div class="info-card">
+            <h4>💡 Tips</h4>
+            <ul>
+              <li>Arrive 15 minutes before showtime</li>
+              <li>Diamond seats include complimentary snacks</li>
+              <li>Free cancellation up to 2 hours before</li>
+              <li>Show your booking confirmation at the counter</li>
+            </ul>
+          </div>
+        </aside>
 
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">🎬 CinePulse</div>
+        <p class="footer__brand-desc">Your gateway to an unparalleled movie-going experience.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movie.html">Movies</a></li>
+          <li><a href="event.html">Events</a></li>
+          <li><a href="book.html">Book Tickets</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="main.js"></script>
   <script src="book.js"></script>
 </body>
 </html>
-

@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission</title>
-    <link rel="stylesheet" href="submit.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — CinePulse</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="submit.css">
 </head>
 <body>
-    <h1>Your Ticket Has Been Confirmed</h1>
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__logo-icon">🎬</span>
+      <a href="index.html" class="navbar__logo">CinePulse</a>
+    </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="book.html">Book Tickets</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="navbar__hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Confirmation -->
+  <main class="confirm-page">
+    <div class="confirm-card">
+      <div class="confirm-checkmark">✅</div>
+      <h1 class="confirm-title">Booking Confirmed!</h1>
+      <p class="confirm-text">
+        Your ticket has been successfully booked. You'll receive a confirmation on your registered mobile number.
+      </p>
+      <div class="confirm-actions">
+        <a href="movie.html" class="confirm-btn confirm-btn--primary">Browse More Movies</a>
+        <a href="index.html" class="confirm-btn confirm-btn--outline">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>

@@ -1,131 +1,71 @@
-* {
-    margin: 0;
+/* ============================================
+   CinePulse — Movie / Event Page Shared Styles
+   ============================================ */
 
-}
-.header {
-    display: block;
-    height: 100vh;
-}
-
-.nav1 {
-    background-color: black;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    padding: 14px 14px;
-    height: 40px;
-}
-.title h1{
-    align-items: center;
-    justify-content: center;
-    /*  animation:fadeIn 1s ease forwards; */
-}
-/* @keyframes fadeIn{
-    from{
-        opacity: 0;
-        transform: transslateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY0()
-    }
-} */
-
-.search input[type=text]{
-    float:right;
-    width: 400px;
-    margin: auto;
-    height: auto;
-  border: 3px solid grey;
-  padding: 10px;
+/* ---------- PAGE HERO BANNER ---------- */
+.page-hero {
+  position: relative;
+  height: 340px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  margin-top: var(--nav-height);
 }
 
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--bg-primary) 0%,
+    rgba(10, 15, 28, 0.8) 50%,
+    rgba(10, 15, 28, 0.5) 100%
+  );
+}
 
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 5% 50px;
+  width: 100%;
+}
 
-body {
-    
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(img7.jpg);
-    background-position-y: 45px;
-    background-size:cover ;
-    background-repeat: no-repeat;
-    margin-bottom: 800px;
+.page-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 8px;
 }
-.nav2 {
-    overflow: hidden;
-    background-color: #333;
-    height:40px;
-}
-.nav2 a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.nav2 a.about{
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
 
+.page-hero__subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
 }
-.nav2 a#about{
-    float:right;
+
+/* ---------- MOVIE SECTIONS ---------- */
+.movies-page,
+.events-page {
+  padding: 40px 0 0;
 }
-.nav2 a:hover {
-    background-color: #ddd;
-    color: black;
+
+.movie-section,
+.event-section {
+  margin-bottom: 60px;
 }
-.nav2 a#active {
-    background-color: #f07006;
-    color: white;
-} 
-.musicevents{
-    color:white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: x-large;
-}
-.event1 img{
-    height: 350px;
-    margin-left: 30px;
-    transition: 0.3s;
-}
-.event1 img:hover{
-    transform: scale(1.08);
-}
-.comedyevents{
-    color:white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: x-large;
-}
-.event2 img{
-    height: 350px;
-    margin-left: 30px;
-    transition: 0.3s;
-}
-.event2 img:hover{
-    transform: scale(1.08);
-}
-.exevents{
-    color:white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: x-large;
-}
-.event3 img{
-    height: 350px;
-    margin-left: 30px;
-    transition: 0.3s;
-}
-.event3 img:hover{
-    transform: scale(1.08);
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .page-hero {
+    height: 260px;
+  }
+
+  .page-hero__content {
+    padding: 24px 5% 30px;
+  }
+
+  .movie-section,
+  .event-section {
+    margin-bottom: 40px;
+  }
 }

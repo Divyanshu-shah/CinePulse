@@ -1,10 +1,116 @@
-body {
-    background-image: url(img1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+/* ============================================
+   CinePulse — Confirmation Page Styles
+   ============================================ */
+
+.confirm-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nav-height) 5% 40px;
 }
-h1{
-    text-align:center;
-    margin-top: 20pc;
-    font-size: 80px;;
+
+.confirm-card {
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 60px 48px;
+  max-width: 520px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  animation: confirmIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes confirmIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.confirm-checkmark {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  animation: checkPop 0.5s ease 0.3s both;
+}
+
+@keyframes checkPop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.confirm-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--accent-green), #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.confirm-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.confirm-btn {
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-smooth);
+  text-align: center;
+}
+
+.confirm-btn--primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.confirm-btn--primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+.confirm-btn--outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-glass);
+}
+
+.confirm-btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .confirm-card {
+    padding: 40px 24px;
+  }
+
+  .confirm-actions {
+    flex-direction: column;
+  }
 }

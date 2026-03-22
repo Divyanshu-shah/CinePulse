@@ -1,56 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="event.css">
-    <title>Events</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore live music shows, comedy nights, and exhibitions near you. Book event tickets on CinePulse.">
+  <title>Events — CinePulse</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="event.css">
 </head>
 <body>
-     <div class="header">
-                <div class="nav1">
-                    <div class="title">
-                        <h1>CinePulse</h1>
-                    </div>
-                    <div class="search">
-                        <input type="text" placeholder="Type here...">
-                    </div>
-                </div>
-                <div class="nav2">
-                    <a href="index.html" >Home</a>
-                    <a href="movie.html" >Movies</a>
-                    <a href="#home" id="active">Events</a>
-                    <a href="#book">Book Here</a>
-                    <a href="about.html" id="about">About US</a>
-                </div>
-                <div class="musicevents">Music Shows</div><br>
-                <div class="event1">
-                <a href="book.html"><img src="1.webp"></a>
-                <a href="book.html"><img src="2.webp"></a>
-                <a href="book.html"><img src="3.webp"></a>
-                <a href="book.html"><img src="4.webp"></a>
-                <a href="book.html"><img src="5.webp"></a>
-                <a href="book.html"><img src="16.png"></a>
-                </div><br>
-                <div class="comedyevents">Comedy Shows</div><br>
-                <div class="event2">
-                    <a href="book.html"><img src="6.webp"></a>
-                    <a href="book.html"><img src="7.webp"></a>
-                    <a href="book.html"><img src="8.webp"></a>
-                    <a href="book.html"><img src="9.webp"></a>
-                    <a href="book.html"><img src="10.webp"></a>
-                    <a href="book.html"><img src="17.png"></a>
-                </div><br>
-                <div class="exevents">Exhibitions</div><br>
-                <div class="event3">
-                    <a href="book.html"><img src="11.webp"></a>
-                    <a href="book.html"><img src="12.webp"></a>
-                    <a href="book.html"><img src="13.webp"></a>
-                    <a href="book.html"><img src="14.webp"></a>
-                    <a href="book.html"><img src="15.webp"></a>
-                    <a href="book.html"><img src="18.png"></a>
-                </div>
-    </div>
-</body>
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
 
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__logo-icon">🎬</span>
+      <a href="index.html" class="navbar__logo">CinePulse</a>
+    </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="event.html" class="active">Events</a></li>
+      <li><a href="book.html">Book Tickets</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="navbar__search">
+      <span class="navbar__search-icon">🔍</span>
+      <input type="text" placeholder="Search events..." id="searchInput">
+    </div>
+    <div class="navbar__hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Page Header -->
+  <header class="page-hero" style="background-image: url('theater.png');">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">🎭 Events</h1>
+      <p class="page-hero__subtitle">Music shows, comedy nights, exhibitions and more</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="events-page">
+    <div class="container">
+
+      <!-- Music Shows -->
+      <section class="event-section reveal">
+        <div class="section-header">
+          <h2 class="section-header__title">🎵 Music Shows</h2>
+          <p class="section-header__subtitle">Live concerts and music festivals</p>
+        </div>
+        <div class="card-grid stagger-children">
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="1.webp" alt="Music Show 1" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Live Concert</h3>
+              <p class="card__meta">Music • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="2.webp" alt="Music Show 2" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Rock Night</h3>
+              <p class="card__meta">Music • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="3.webp" alt="Music Show 3" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Jazz Evening</h3>
+              <p class="card__meta">Music • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="4.webp" alt="Music Show 4" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Acoustic Night</h3>
+              <p class="card__meta">Music • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="5.webp" alt="Music Show 5" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">EDM Festival</h3>
+              <p class="card__meta">Music • Festival</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="16.png" alt="Music Show 6" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Classical Night</h3>
+              <p class="card__meta">Music • Classical</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Comedy Shows -->
+      <section class="event-section reveal">
+        <div class="section-header">
+          <h2 class="section-header__title">😂 Comedy Shows</h2>
+          <p class="section-header__subtitle">Laugh out loud with the best comedians</p>
+        </div>
+        <div class="card-grid stagger-children">
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="6.webp" alt="Comedy Show 1" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Stand-Up Night</h3>
+              <p class="card__meta">Comedy • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="7.webp" alt="Comedy Show 2" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Comedy Central</h3>
+              <p class="card__meta">Comedy • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="8.webp" alt="Comedy Show 3" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Open Mic</h3>
+              <p class="card__meta">Comedy • Open Mic</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="9.webp" alt="Comedy Show 4" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Laugh Riot</h3>
+              <p class="card__meta">Comedy • Live</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="10.webp" alt="Comedy Show 5" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Comedy Fest</h3>
+              <p class="card__meta">Comedy • Festival</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="17.png" alt="Comedy Show 6" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Improv Night</h3>
+              <p class="card__meta">Comedy • Improv</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Exhibitions -->
+      <section class="event-section reveal">
+        <div class="section-header">
+          <h2 class="section-header__title">🎨 Exhibitions</h2>
+          <p class="section-header__subtitle">Art, culture, and immersive experiences</p>
+        </div>
+        <div class="card-grid stagger-children">
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="11.webp" alt="Exhibition 1" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Art Gallery</h3>
+              <p class="card__meta">Exhibition • Art</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="12.webp" alt="Exhibition 2" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Tech Expo</h3>
+              <p class="card__meta">Exhibition • Tech</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="13.webp" alt="Exhibition 3" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Culture Festival</h3>
+              <p class="card__meta">Exhibition • Culture</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="14.webp" alt="Exhibition 4" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Photo Exhibition</h3>
+              <p class="card__meta">Exhibition • Photography</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="15.webp" alt="Exhibition 5" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Heritage Walk</h3>
+              <p class="card__meta">Exhibition • Heritage</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="18.png" alt="Exhibition 6" loading="lazy">
+              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Design Week</h3>
+              <p class="card__meta">Exhibition • Design</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">🎬 CinePulse</div>
+        <p class="footer__brand-desc">Your gateway to an unparalleled movie-going experience.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movie.html">Movies</a></li>
+          <li><a href="event.html">Events</a></li>
+          <li><a href="book.html">Book Tickets</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="main.js"></script>
+</body>
 </html>

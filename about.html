@@ -1,50 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="about.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about CinePulse and PVR INOX — India's largest premium film exhibitor with 1700+ screens across 115 cities.">
+  <title>About Us — CinePulse</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <div class="header">
-        <div class="nav1">
-            <div class="title">
-                <h1>CinePulse</h1>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search Movies...">
-            </div>
-        </div>
-        <div class="nav2">
-            <a href="index.html" >Home</a>
-            <a href="movie.html" >Movies</a>
-            <a href="event.html">Events</a>
-            <a href="#book">Book Here</a>
-            <a href="#about" id="about" class="active">About US</a>
-        </div>
-        <div class="about">
-        <div class="ab">
-            <h2>ABOUT US</h2>
-        </div>
-        <div class="ab2">
-            <h3>Welcome to PVR INOX, the largest and the most premium film exhibitor in India with 1707 screens across 115 cities (India and Sri Lanka) with 359 properties and an aggregate seating capacity of 3.58 lakh seats. Over the years, we have consistently increased our screen count, both organically and inorganically, through strategic investments and acquisitions which includes ‘Cinemax Cinemas’ in November 2012, ‘DT Cinemas’ in May 2016, ‘SPI Cinemas’ in August 2018. We recently completed the merger with INOX Leisure Limited, which has added to our storied history of becoming game changers in the film exhibition industry for over 25 years and transforming the out of home entertainment in the country.<br>
-                <br>
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
 
-                Our mission is to advance and reimagine the movie-going experience by continuing to reinvent ourselves in keeping up with the times and the ever-changing entertainment landscape to make our brand aspirational and accessible. We take pride in our strategically located cinemas and we continuously invest in introducing premium formats, comfortable seating, sound, projection, ambience, and food & beverage to meet evolving consumer expectations so that our patrons have a memorable experience every time they visit our cinemas.<br>
-                <br>
-                
-                We serve as a conduit between consumers and the film industry on one hand and the retail industry and real estate development on the other. As a leading player in the film exhibition industry, our company is spearheading the establishment of a robust ecosystem that brings together key partners, including filmmakers, studios, content providers, equipment and concession manufacturers, data and technology companies, all of whom rely on the strength of our business and the communities we serve. We engage with multiple channels to connect with our over 180 million patrons through research, loyalty, online, digital, and offline modes to provide a platform to showcase film and non-film content and identifying new trends in the film exhibition industry.<br>
-                <br>
-                
-                Our diversified revenue stream comes mainly from box office and non-box office, which primarily includes revenue from Sale of Food and Beverages, advertisement income, convenience fees, and income from movie distribution, among others. Our leadership across key operating metrics and robust financial position is backed by experienced Promoters, Key Managerial Personnel, and a senior management team with an established track record.
-                
-                Thank you for choosing PVR INOX Limited for your entertainment needs. We look forward to welcoming you to our cinemas
-            </h3>
-        </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__logo-icon">🎬</span>
+      <a href="index.html" class="navbar__logo">CinePulse</a>
     </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="book.html">Book Tickets</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+    </ul>
+    <div class="navbar__search">
+      <span class="navbar__search-icon">🔍</span>
+      <input type="text" placeholder="Search..." id="searchInput">
+    </div>
+    <div class="navbar__hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Page Header -->
+  <header class="page-hero" style="background-image: url('img7.jpg');">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">🏢 About Us</h1>
+      <p class="page-hero__subtitle">Redefining the movie-going experience since 1997</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="about-page">
+    <div class="container">
+
+      <!-- Who We Are -->
+      <section class="about-section reveal">
+        <div class="about-section__header">
+          <span class="about-section__number">01</span>
+          <h2 class="about-section__title">Who We Are</h2>
+        </div>
+        <div class="about-section__content">
+          <p>
+            Welcome to <strong class="text-accent">PVR INOX</strong>, the largest and most premium film exhibitor
+            in India with <strong>1,707 screens</strong> across <strong>115 cities</strong> (India and Sri Lanka),
+            with 359 properties and an aggregate seating capacity of <strong>3.58 lakh seats</strong>.
+          </p>
+          <p>
+            Over the years, we have consistently increased our screen count, both organically and
+            inorganically, through strategic investments and acquisitions — including
+            <em>Cinemax Cinemas</em> (2012), <em>DT Cinemas</em> (2016), and <em>SPI Cinemas</em> (2018).
+            We recently completed the merger with INOX Leisure Limited, adding to our storied history
+            of transforming the out-of-home entertainment industry for over 25 years.
+          </p>
+        </div>
+      </section>
+
+      <!-- Our Mission -->
+      <section class="about-section reveal">
+        <div class="about-section__header">
+          <span class="about-section__number">02</span>
+          <h2 class="about-section__title">Our Mission</h2>
+        </div>
+        <div class="about-section__content">
+          <p>
+            Our mission is to <strong class="text-accent">advance and reimagine</strong> the movie-going
+            experience by continuing to reinvent ourselves in keeping up with the times and the
+            ever-changing entertainment landscape — making our brand aspirational and accessible.
+          </p>
+          <p>
+            We take pride in our strategically located cinemas and continuously invest in introducing
+            premium formats, comfortable seating, superior sound, projection, ambiance, and food
+            & beverage to meet evolving consumer expectations. Every visit should be a memorable experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section class="about-timeline reveal">
+        <div class="about-section__header">
+          <span class="about-section__number">03</span>
+          <h2 class="about-section__title">Our Journey</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item reveal-left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">1997</span>
+              <h3>The Beginning</h3>
+              <p>PVR Cinemas was founded, introducing India to multiplex cinemas.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2012</span>
+              <h3>Cinemax Acquisition</h3>
+              <p>Acquired Cinemax Cinemas, expanding our footprint significantly.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2016</span>
+              <h3>DT Cinemas</h3>
+              <p>Strategic acquisition of DT Cinemas in key locations.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-right">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2018</span>
+              <h3>SPI Cinemas Merger</h3>
+              <p>Merged with SPI Cinemas, India's premium cinema chain.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal-left">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2023</span>
+              <h3>PVR INOX Merger</h3>
+              <p>Completed the landmark merger with INOX Leisure Limited, becoming the largest cinema network in India.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Offer -->
+      <section class="about-features reveal">
+        <div class="about-section__header">
+          <span class="about-section__number">04</span>
+          <h2 class="about-section__title">What We Offer</h2>
+        </div>
+        <div class="features-grid stagger-children">
+          <div class="feature-card">
+            <span class="feature-card__icon">🎥</span>
+            <h3 class="feature-card__title">Premium Formats</h3>
+            <p class="feature-card__desc">IMAX, 4DX, P[XL], ICE, Playhouse — the most immersive formats available.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-card__icon">🛋️</span>
+            <h3 class="feature-card__title">Luxury Seating</h3>
+            <p class="feature-card__desc">Recliners, loungers, and premium seats for the ultimate comfort.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-card__icon">🍿</span>
+            <h3 class="feature-card__title">Gourmet F&B</h3>
+            <p class="feature-card__desc">From classic popcorn to gourmet meals — elevated cinema dining.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-card__icon">🔊</span>
+            <h3 class="feature-card__title">Dolby Atmos</h3>
+            <p class="feature-card__desc">State-of-the-art surround sound that puts you inside the movie.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ecosystem -->
+      <section class="about-section reveal">
+        <div class="about-section__header">
+          <span class="about-section__number">05</span>
+          <h2 class="about-section__title">Our Ecosystem</h2>
+        </div>
+        <div class="about-section__content">
+          <p>
+            We serve as a conduit between consumers and the film industry on one hand,
+            and the retail industry and real estate development on the other. As a leading player,
+            we bring together filmmakers, studios, content providers, equipment manufacturers,
+            data and technology companies — all of whom rely on the strength of our business.
+          </p>
+          <p>
+            We engage with <strong class="text-accent">over 180 million patrons</strong> through research,
+            loyalty programs, online platforms, and offline channels, providing a platform to showcase
+            both film and non-film content while identifying new trends in the exhibition industry.
+          </p>
+          <p>
+            Thank you for choosing PVR INOX Limited for your entertainment needs.
+            <strong>We look forward to welcoming you to our cinemas.</strong>
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">🎬 CinePulse</div>
+        <p class="footer__brand-desc">Your gateway to an unparalleled movie-going experience.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movie.html">Movies</a></li>
+          <li><a href="event.html">Events</a></li>
+          <li><a href="book.html">Book Tickets</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="main.js"></script>
 </body>
 </html>
-
-

@@ -1,44 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <meta name="description" content="CinePulse — Your gateway to an unparalleled movie-going experience. Book tickets for the latest blockbusters, events, and more.">
+  <meta property="og:title" content="CinePulse — Book Movie Tickets Online">
+  <meta property="og:description" content="Step into the world of cinematic enchantment. Book tickets for the latest movies and events.">
+  <title>CinePulse — Book Movie Tickets Online</title>
+  <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="home.css">
 </head>
-
 <body>
-  <div class="header">
-    <div class="nav1">
-      <div class="title">
-        <h1>CinePulse</h1>
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__brand">
+      <span class="navbar__logo-icon">🎬</span>
+      <a href="index.html" class="navbar__logo">CinePulse</a>
+    </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="book.html">Book Tickets</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="navbar__search">
+      <span class="navbar__search-icon">🔍</span>
+      <input type="text" placeholder="Search movies..." id="searchInput">
+    </div>
+    <div class="navbar__hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero__carousel">
+      <div class="hero__slide active" style="background-image: url('theater.png');">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <span class="hero__badge">🍿 Now Showing</span>
+          <h1 class="hero__title">Lights, Camera,<br><span class="hero__title-accent">Action!</span></h1>
+          <p class="hero__description">
+            Step into the world of cinematic enchantment with <strong>CinePulse</strong>.
+            Your gateway to an unparalleled movie-going experience.
+            From edge-of-your-seat blockbusters to indie gems,
+            we bring the magic of the silver screen to your fingertips.
+          </p>
+          <div class="hero__actions">
+            <a href="movie.html" class="hero__btn hero__btn--primary">Explore Movies</a>
+            <a href="book.html" class="hero__btn hero__btn--outline">Book Now</a>
+          </div>
+        </div>
       </div>
-      <div class="search">
-        <input type="text" placeholder="Search Movies...">
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll Down</span>
+      <div class="hero__scroll-arrow">↓</div>
+    </div>
+  </header>
+
+  <!-- Featured Section -->
+  <main>
+    <section class="featured" id="featured">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">🔥 Trending Now</h2>
+          <p class="section-header__subtitle">The hottest movies everyone's talking about</p>
+        </div>
+        <div class="card-grid stagger-children">
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="jawan.png" alt="Jawan" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Jawan</h3>
+              <p class="card__meta">Action • Hindi</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="salar.png" alt="Salaar" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Salaar</h3>
+              <p class="card__meta">Action • Hindi</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="dunki.png" alt="Dunki" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Dunki</h3>
+              <p class="card__meta">Comedy-Drama • Hindi</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="tiger.png" alt="Tiger 3" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Tiger 3</h3>
+              <p class="card__meta">Action • Hindi</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="marvel.png" alt="The Marvels" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">The Marvels</h3>
+              <p class="card__meta">Sci-Fi • English</p>
+            </div>
+          </a>
+          <a href="book.html" class="card">
+            <div class="card__image-wrapper">
+              <img src="dune.png" alt="Dune Part Two" loading="lazy">
+              <div class="card__overlay">
+                <span class="card__overlay-btn">Book Tickets →</span>
+              </div>
+            </div>
+            <div class="card__info">
+              <h3 class="card__title">Dune: Part Two</h3>
+              <p class="card__meta">Sci-Fi • English</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats reveal">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__card">
+            <span class="stats__number" data-target="1707">0</span>
+            <span class="stats__label">Screens</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number" data-target="115">0</span>
+            <span class="stats__label">Cities</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number" data-target="359">0</span>
+            <span class="stats__label">Properties</span>
+          </div>
+          <div class="stats__card">
+            <span class="stats__number">180M+</span>
+            <span class="stats__label">Patrons</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Categories -->
+    <section class="categories reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">🎭 Explore</h2>
+          <p class="section-header__subtitle">Find what you love</p>
+        </div>
+        <div class="categories__grid stagger-children">
+          <a href="movie.html" class="categories__card">
+            <span class="categories__icon">🎬</span>
+            <h3>Movies</h3>
+            <p>Latest blockbusters & indie gems</p>
+          </a>
+          <a href="event.html" class="categories__card">
+            <span class="categories__icon">🎵</span>
+            <h3>Events</h3>
+            <p>Music, comedy & exhibitions</p>
+          </a>
+          <a href="book.html" class="categories__card">
+            <span class="categories__icon">🎟️</span>
+            <h3>Book Tickets</h3>
+            <p>Reserve your seats instantly</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">🎬 CinePulse</div>
+        <p class="footer__brand-desc">
+          Your gateway to an unparalleled movie-going experience.
+          From blockbusters to indie gems, we bring the magic of cinema to your fingertips.
+        </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movie.html">Movies</a></li>
+          <li><a href="event.html">Events</a></li>
+          <li><a href="book.html">Book Tickets</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="nav2">
-      <a href="#home" id="active">Home</a>
-      <a href="movie.html">Movies</a>
-      <a href="event.html">Events</a>
-      <a href="#book">Book Here</a>
-      <a href="about.html" id="about">About Us</a>
+    <div class="footer__bottom">
+      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
     </div>
+  </footer>
 
-    <div class="intro animated-text">
-      <span>"Lights, camera, action!"</span><br><br>
-      Step into the world of cinematic enchantment with <b>CinePulse</b>.<br>
-      Your gateway to an unparalleled movie-going experience.<br>
-      From edge-of-your-seat blockbusters to indie gems,<br>
-      we bring the magic of the silver screen to your fingertips.
-    </div>
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 
-    <div class="copy">
-      COPYRIGHT © 2023 PVR INOX LIMITED. ALL RIGHTS RESERVED.
-    </div>
-  </div>
+  <script src="main.js"></script>
+  <script>
+    // Init hero carousel & stats counter
+    document.addEventListener('DOMContentLoaded', () => {
+      initHeroCarousel();
+
+      // Animated counters
+      const counters = document.querySelectorAll('.stats__number[data-target]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = +el.dataset.target;
+            const duration = 2000;
+            const start = performance.now();
+
+            function update(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(target * eased).toLocaleString();
+              if (progress < 1) requestAnimationFrame(update);
+              else el.textContent = target.toLocaleString() + '+';
+            }
+            requestAnimationFrame(update);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(c => observer.observe(c));
+    });
+  </script>
 </body>
-
 </html>
