@@ -156,7 +156,10 @@ a {
 }
 
 .navbar__logo-icon {
-  font-size: 1.5rem;
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .navbar__links {
@@ -303,7 +306,6 @@ a {
   border: 1px solid var(--border-glass);
   transition: all var(--transition-smooth);
   cursor: pointer;
-  group: true;
 }
 
 .card:hover {
@@ -409,6 +411,16 @@ a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo-img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .footer__brand-desc {
