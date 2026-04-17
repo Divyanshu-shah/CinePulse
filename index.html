@@ -25,12 +25,16 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="movie.html">Movies</a></li>
       <li><a href="event.html">Events</a></li>
-      <li><a href="book.html">Book Tickets</a></li>
       <li><a href="about.html">About Us</a></li>
     </ul>
-    <div class="navbar__search">
-      <span class="navbar__search-icon">🔍</span>
-      <input type="text" placeholder="Search movies..." id="searchInput">
+    <div class="navbar__actions" style="display: flex; align-items: center; gap: 15px;">
+      <div class="navbar__search">
+        <span class="navbar__search-icon">🔍</span>
+        <input type="text" placeholder="Search movies..." id="searchInput">
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <span class="theme-toggle__icon">🌙</span>
+      </button>
     </div>
     <div class="navbar__hamburger" id="hamburger">
       <span></span>
@@ -59,7 +63,7 @@
           </p>
           <div class="hero__actions">
             <a href="movie.html" class="hero__btn hero__btn--primary">Explore Movies</a>
-            <a href="book.html" class="hero__btn hero__btn--outline">Book Now</a>
+            <a href="movie.html" class="hero__btn hero__btn--outline">Book Now</a>
           </div>
         </div>
       </div>
@@ -78,79 +82,8 @@
           <h2 class="section-header__title">🔥 Trending Now</h2>
           <p class="section-header__subtitle">The hottest movies everyone's talking about</p>
         </div>
-        <div class="card-grid stagger-children">
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="jawan.png" alt="Jawan" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Jawan</h3>
-              <p class="card__meta">Action • Hindi</p>
-            </div>
-          </a>
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="salar.png" alt="Salaar" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Salaar</h3>
-              <p class="card__meta">Action • Hindi</p>
-            </div>
-          </a>
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="dunki.png" alt="Dunki" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Dunki</h3>
-              <p class="card__meta">Comedy-Drama • Hindi</p>
-            </div>
-          </a>
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="tiger.png" alt="Tiger 3" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Tiger 3</h3>
-              <p class="card__meta">Action • Hindi</p>
-            </div>
-          </a>
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="marvel.png" alt="The Marvels" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">The Marvels</h3>
-              <p class="card__meta">Sci-Fi • English</p>
-            </div>
-          </a>
-          <a href="book.html" class="card">
-            <div class="card__image-wrapper">
-              <img src="dune.png" alt="Dune Part Two" loading="lazy">
-              <div class="card__overlay">
-                <span class="card__overlay-btn">Book Tickets →</span>
-              </div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Dune: Part Two</h3>
-              <p class="card__meta">Sci-Fi • English</p>
-            </div>
-          </a>
+        <div class="card-grid stagger-children" id="trendingMoviesGrid">
+          <!-- Dynamic TMDB API cards will be inserted here -->
         </div>
       </div>
     </section>
@@ -197,10 +130,10 @@
             <h3>Events</h3>
             <p>Music, comedy & exhibitions</p>
           </a>
-          <a href="book.html" class="categories__card">
+          <a href="movie.html" class="categories__card">
             <span class="categories__icon">🎟️</span>
-            <h3>Book Tickets</h3>
-            <p>Reserve your seats instantly</p>
+            <h3>Shows</h3>
+            <p>Browse & book your seats instantly</p>
           </a>
         </div>
       </div>
@@ -229,7 +162,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="movie.html">Movies</a></li>
           <li><a href="event.html">Events</a></li>
-          <li><a href="book.html">Book Tickets</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
       <div class="footer__col">

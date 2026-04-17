@@ -3,23 +3,140 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
+  const params = new URLSearchParams(window.location.search);
+  const itemType = params.get('type') || localStorage.getItem('bookingType');
+  const itemName = params.get('name') || localStorage.getItem('bookingName');
+  const itemGenre = params.get('genre') || localStorage.getItem('bookingGenre');
+  const itemLang = params.get('lang') || localStorage.getItem('bookingLang');
+  const itemImage = params.get('image') || localStorage.getItem('bookingImage');
+
+  const bookingEmpty = document.getElementById('bookingEmpty');
+  const bookingContent = document.getElementById('bookingContent');
+
+  // If no item was selected, show the empty state
+  if (!itemType || !itemName) {
+    bookingEmpty.style.display = 'flex';
+    bookingContent.style.display = 'none';
+    return;
+  }
+
+  // Show the booking content
+  bookingEmpty.style.display = 'none';
+  bookingContent.style.display = 'block';
+
+  // --- Populate banner ---
+  const bannerImage = document.getElementById('bannerImage');
+  const bannerName = document.getElementById('bannerName');
+  const bannerType = document.getElementById('bannerType');
+  const bannerGenre = document.getElementById('bannerGenre');
+  const bannerLang = document.getElementById('bannerLang');
+
+  if (bannerImage && itemImage) {
+    bannerImage.src = itemImage;
+    bannerImage.alt = itemName;
+  }
+  if (bannerName) bannerName.textContent = itemName;
+  if (bannerType) {
+    const typeLabel = itemType === 'event' ? '🎭 Event' : '🎬 Movie';
+    bannerType.textContent = typeLabel;
+    bannerType.className = 'booking-banner__type booking-banner__type--' + itemType;
+  }
+  if (bannerGenre && itemGenre) bannerGenre.textContent = itemGenre;
+  if (bannerLang && itemLang) bannerLang.textContent = itemLang;
+
+  // --- Update page title ---
+  document.title = `Book ${itemName} — CinePulse`;
+
+  // --- Update booking card header ---
+  const bookingTitle = document.getElementById('bookingTitle');
+  const bookingSubtitle = document.getElementById('bookingSubtitle');
+
+  if (itemType === 'event') {
+    if (bookingTitle) bookingTitle.textContent = 'Book Event Tickets';
+    if (bookingSubtitle) bookingSubtitle.textContent = `Secure your spot for ${itemName}`;
+  } else {
+    if (bookingTitle) bookingTitle.textContent = 'Book Movie Tickets';
+    if (bookingSubtitle) bookingSubtitle.textContent = `Get your seats for ${itemName}`;
+  }
+
+  // --- Seat type options based on type ---
+  const seatOptions = document.getElementById('seatOptions');
+  const seatSectionTitle = document.getElementById('seatSectionTitle');
+
+  let seatConfig;
+
+  if (itemType === 'event') {
+    if (seatSectionTitle) seatSectionTitle.textContent = 'Select Pass Type';
+    seatConfig = [
+      { value: 'General', icon: '🎫', name: 'General', price: 500 },
+      { value: 'VIP', icon: '⭐', name: 'VIP', price: 1500 },
+      { value: 'VVIP', icon: '👑', name: 'VVIP', price: 3000 }
+    ];
+  } else {
+    if (seatSectionTitle) seatSectionTitle.textContent = 'Select Seat Type';
+    seatConfig = [
+      { value: 'Silver', icon: '🪑', name: 'Silver', price: 500 },
+      { value: 'Gold', icon: '⭐', name: 'Gold', price: 1000 },
+      { value: 'Diamond', icon: '💎', name: 'Diamond', price: 1500 }
+    ];
+  }
+
+  // Build seat options HTML
+  if (seatOptions) {
+    seatOptions.innerHTML = seatConfig.map(seat => `
+      <label class="seat-card">
+        <input type="radio" name="seat" value="${seat.value}" required>
+        <div class="seat-card__content">
+          <div class="seat-card__icon">${seat.icon}</div>
+          <div class="seat-card__name">${seat.name}</div>
+          <div class="seat-card__price">₹${seat.price.toLocaleString('en-IN')}</div>
+        </div>
+      </label>
+    `).join('');
+  }
+
+  // Build seat price map
+  const seatPrices = {};
+  seatConfig.forEach(s => seatPrices[s.value] = s.price);
+
+  // --- Summary: show item name ---
+  const summaryItemLabel = document.getElementById('summaryItemLabel');
+  const summaryItemName = document.getElementById('summaryItemName');
+  if (summaryItemLabel) summaryItemLabel.textContent = itemType === 'event' ? 'Event' : 'Movie';
+  if (summaryItemName) summaryItemName.textContent = itemName;
+
+  // --- Tips based on type ---
+  const tipsTitle = document.getElementById('tipsTitle');
+  const tipsList = document.getElementById('tipsList');
+  if (itemType === 'event') {
+    if (tipsTitle) tipsTitle.textContent = '💡 Event Tips';
+    if (tipsList) tipsList.innerHTML = `
+      <li>Gates open 30 minutes before the event</li>
+      <li>VVIP pass includes backstage access</li>
+      <li>Free cancellation up to 24 hours before</li>
+      <li>Carry your ID proof along with the ticket</li>
+      <li>Food & beverages available at the venue</li>
+    `;
+  } else {
+    if (tipsTitle) tipsTitle.textContent = '💡 Movie Tips';
+    if (tipsList) tipsList.innerHTML = `
+      <li>Arrive 15 minutes before showtime</li>
+      <li>Diamond seats include complimentary snacks</li>
+      <li>Free cancellation up to 2 hours before</li>
+      <li>Show your booking confirmation at the counter</li>
+    `;
+  }
+
+  // --- Form logic ---
   const form = document.getElementById('bookingForm');
   if (!form) return;
 
   const ticketsInput = document.getElementById('tickets');
   const dateInput = document.getElementById('date');
-  const seatRadios = document.querySelectorAll('input[name="seat"]');
-
   const summaryTickets = document.getElementById('summaryTickets');
   const summarySeat = document.getElementById('summarySeat');
   const summaryDate = document.getElementById('summaryDate');
   const summaryTotal = document.getElementById('summaryTotal');
-
-  const seatPrices = {
-    Silver: 500,
-    Gold: 1000,
-    Diamond: 1500
-  };
 
   // Set min date to today
   const today = new Date().toISOString().split('T')[0];
@@ -63,7 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   ticketsInput.addEventListener('input', updateSummary);
   dateInput.addEventListener('input', updateSummary);
-  seatRadios.forEach(r => r.addEventListener('change', updateSummary));
+
+  // Attach listeners to dynamically created seat radios
+  document.querySelectorAll('input[name="seat"]').forEach(r => r.addEventListener('change', updateSummary));
 
   // Form validation with inline errors
   function clearErrors() {
@@ -136,8 +255,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(() => {
       const total = parseInt(tickets) * seatPrices[seat.value];
+      const typeLabel = itemType === 'event' ? 'event' : 'movie';
 
-      showToast(`🎟️ Booking confirmed! ${tickets} ${seat.value} ticket(s) — ₹${total.toLocaleString('en-IN')}`, 'success');
+      showToast(`🎟️ Booking confirmed for ${itemName}! ${tickets} ${seat.value} ticket(s) — ₹${total.toLocaleString('en-IN')}`, 'success');
 
       btnText.style.display = 'inline';
       btnLoading.style.display = 'none';

@@ -21,8 +21,8 @@
   background: linear-gradient(
     to top,
     var(--bg-primary) 0%,
-    rgba(10, 15, 28, 0.8) 50%,
-    rgba(10, 15, 28, 0.5) 100%
+    var(--overlay-heavy) 50%,
+    var(--overlay-mid) 100%
   );
 }
 

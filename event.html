@@ -23,12 +23,16 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="movie.html">Movies</a></li>
       <li><a href="event.html" class="active">Events</a></li>
-      <li><a href="book.html">Book Tickets</a></li>
       <li><a href="about.html">About Us</a></li>
     </ul>
-    <div class="navbar__search">
-      <span class="navbar__search-icon">🔍</span>
-      <input type="text" placeholder="Search events..." id="searchInput">
+    <div class="navbar__actions" style="display: flex; align-items: center; gap: 15px;">
+      <div class="navbar__search">
+        <span class="navbar__search-icon">🔍</span>
+        <input type="text" placeholder="Search events..." id="searchInput">
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <span class="theme-toggle__icon">🌙</span>
+      </button>
     </div>
     <div class="navbar__hamburger" id="hamburger">
       <span></span>
@@ -58,7 +62,7 @@
           <p class="section-header__subtitle">Live concerts and music festivals</p>
         </div>
         <div class="card-grid stagger-children">
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Live%20Concert&genre=Music&lang=Live&image=1.webp" class="card">
             <div class="card__image-wrapper">
               <img src="1.webp" alt="Music Show 1" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -68,7 +72,7 @@
               <p class="card__meta">Music • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Rock%20Night&genre=Music&lang=Live&image=2.webp" class="card">
             <div class="card__image-wrapper">
               <img src="2.webp" alt="Music Show 2" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -78,7 +82,7 @@
               <p class="card__meta">Music • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Jazz%20Evening&genre=Music&lang=Live&image=3.webp" class="card">
             <div class="card__image-wrapper">
               <img src="3.webp" alt="Music Show 3" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -88,7 +92,7 @@
               <p class="card__meta">Music • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Acoustic%20Night&genre=Music&lang=Live&image=4.webp" class="card">
             <div class="card__image-wrapper">
               <img src="4.webp" alt="Music Show 4" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -98,7 +102,7 @@
               <p class="card__meta">Music • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=EDM%20Festival&genre=Music&lang=Festival&image=5.webp" class="card">
             <div class="card__image-wrapper">
               <img src="5.webp" alt="Music Show 5" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -108,7 +112,7 @@
               <p class="card__meta">Music • Festival</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Classical%20Night&genre=Music&lang=Classical&image=16.png" class="card">
             <div class="card__image-wrapper">
               <img src="16.png" alt="Music Show 6" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -128,7 +132,7 @@
           <p class="section-header__subtitle">Laugh out loud with the best comedians</p>
         </div>
         <div class="card-grid stagger-children">
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Stand-Up%20Night&genre=Comedy&lang=Live&image=6.webp" class="card">
             <div class="card__image-wrapper">
               <img src="6.webp" alt="Comedy Show 1" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -138,7 +142,7 @@
               <p class="card__meta">Comedy • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Comedy%20Central&genre=Comedy&lang=Live&image=7.webp" class="card">
             <div class="card__image-wrapper">
               <img src="7.webp" alt="Comedy Show 2" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -148,7 +152,7 @@
               <p class="card__meta">Comedy • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Open%20Mic&genre=Comedy&lang=Open%20Mic&image=8.webp" class="card">
             <div class="card__image-wrapper">
               <img src="8.webp" alt="Comedy Show 3" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -158,7 +162,7 @@
               <p class="card__meta">Comedy • Open Mic</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Laugh%20Riot&genre=Comedy&lang=Live&image=9.webp" class="card">
             <div class="card__image-wrapper">
               <img src="9.webp" alt="Comedy Show 4" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -168,7 +172,7 @@
               <p class="card__meta">Comedy • Live</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Comedy%20Fest&genre=Comedy&lang=Festival&image=10.webp" class="card">
             <div class="card__image-wrapper">
               <img src="10.webp" alt="Comedy Show 5" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -178,7 +182,7 @@
               <p class="card__meta">Comedy • Festival</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Improv%20Night&genre=Comedy&lang=Improv&image=17.png" class="card">
             <div class="card__image-wrapper">
               <img src="17.png" alt="Comedy Show 6" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -198,7 +202,7 @@
           <p class="section-header__subtitle">Art, culture, and immersive experiences</p>
         </div>
         <div class="card-grid stagger-children">
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Art%20Gallery&genre=Exhibition&lang=Art&image=11.webp" class="card">
             <div class="card__image-wrapper">
               <img src="11.webp" alt="Exhibition 1" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -208,7 +212,7 @@
               <p class="card__meta">Exhibition • Art</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Tech%20Expo&genre=Exhibition&lang=Tech&image=12.webp" class="card">
             <div class="card__image-wrapper">
               <img src="12.webp" alt="Exhibition 2" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -218,7 +222,7 @@
               <p class="card__meta">Exhibition • Tech</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Culture%20Festival&genre=Exhibition&lang=Culture&image=13.webp" class="card">
             <div class="card__image-wrapper">
               <img src="13.webp" alt="Exhibition 3" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -228,7 +232,7 @@
               <p class="card__meta">Exhibition • Culture</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Photo%20Exhibition&genre=Exhibition&lang=Photography&image=14.webp" class="card">
             <div class="card__image-wrapper">
               <img src="14.webp" alt="Exhibition 4" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -238,7 +242,7 @@
               <p class="card__meta">Exhibition • Photography</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Heritage%20Walk&genre=Exhibition&lang=Heritage&image=15.webp" class="card">
             <div class="card__image-wrapper">
               <img src="15.webp" alt="Exhibition 5" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -248,7 +252,7 @@
               <p class="card__meta">Exhibition • Heritage</p>
             </div>
           </a>
-          <a href="book.html" class="card">
+          <a href="book.html?type=event&name=Design%20Week&genre=Exhibition&lang=Design&image=18.png" class="card">
             <div class="card__image-wrapper">
               <img src="18.png" alt="Exhibition 6" loading="lazy">
               <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
@@ -283,7 +287,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="movie.html">Movies</a></li>
           <li><a href="event.html">Events</a></li>
-          <li><a href="book.html">Book Tickets</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
       <div class="footer__col">

@@ -23,12 +23,16 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="movie.html">Movies</a></li>
       <li><a href="event.html">Events</a></li>
-      <li><a href="book.html">Book Tickets</a></li>
       <li><a href="about.html" class="active">About Us</a></li>
     </ul>
-    <div class="navbar__search">
-      <span class="navbar__search-icon">🔍</span>
-      <input type="text" placeholder="Search..." id="searchInput">
+    <div class="navbar__actions" style="display: flex; align-items: center; gap: 15px;">
+      <div class="navbar__search">
+        <span class="navbar__search-icon">🔍</span>
+        <input type="text" placeholder="Search..." id="searchInput">
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <span class="theme-toggle__icon">🌙</span>
+      </button>
     </div>
     <div class="navbar__hamburger" id="hamburger">
       <span></span>
@@ -220,7 +224,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="movie.html">Movies</a></li>
           <li><a href="event.html">Events</a></li>
-          <li><a href="book.html">Book Tickets</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
       <div class="footer__col">

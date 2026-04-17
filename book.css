@@ -2,6 +2,186 @@
    CinePulse — Booking Page Styles
    ============================================ */
 
+/* ---------- EMPTY STATE ---------- */
+.booking-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.booking-empty__content {
+  max-width: 480px;
+  padding: 60px 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.booking-empty__icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.booking-empty__title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.booking-empty__desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.booking-empty__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- BOOKING PAGE BUTTONS ---------- */
+.booking-empty .hero__btn {
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-align: center;
+  text-decoration: none;
+}
+
+.booking-empty .hero__btn--primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.booking-empty .hero__btn--primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+.booking-empty .hero__btn--outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.booking-empty .hero__btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---------- BOOKING BANNER ---------- */
+.booking-banner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px;
+  margin-bottom: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  position: relative;
+}
+
+.booking-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.booking-banner__image {
+  width: 120px;
+  height: 160px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.booking-banner__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-banner__info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.booking-banner__type {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.booking-banner__type--event {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.booking-banner__name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.booking-banner__meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.booking-banner__tag {
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+}
+
 /* ---------- BOOKING LAYOUT ---------- */
 .booking-page {
   padding-top: calc(var(--nav-height) + 40px);
@@ -359,6 +539,10 @@
     position: relative;
     top: 0;
   }
+
+  .booking-banner__name {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -386,5 +570,42 @@
   .seat-card__icon {
     margin-bottom: 0;
     font-size: 1.5rem;
+  }
+
+  .booking-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .booking-banner__image {
+    width: 100px;
+    height: 140px;
+  }
+
+  .booking-banner__name {
+    font-size: 1.3rem;
+  }
+
+  .booking-banner__meta {
+    justify-content: center;
+  }
+
+  .booking-empty__content {
+    padding: 40px 24px;
+  }
+
+  .booking-empty__icon {
+    font-size: 3rem;
+  }
+
+  .booking-empty__title {
+    font-size: 1.3rem;
+  }
+
+  .booking-empty__actions {
+    flex-direction: column;
+    align-items: center;
   }
 }
