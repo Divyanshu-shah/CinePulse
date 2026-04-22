@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initBackToTop();
   initPageTransitions();
-  initSearch();
+
   fetchAllMovies();
 });
 
@@ -200,38 +200,6 @@ function showToast(message, type = 'info') {
   }, 3000);
 }
 
-/* ---------- SEARCH FUNCTIONALITY ---------- */
-function initSearch() {
-  const searchInput = document.querySelector('.navbar__search input');
-  if (!searchInput) return;
-
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.card');
-
-    if (!cards.length) return;
-
-    cards.forEach(card => {
-      const title = card.querySelector('.card__title');
-      if (title) {
-        const text = title.textContent.toLowerCase();
-        if (query === '' || text.includes(query)) {
-          card.style.display = '';
-          card.style.opacity = '1';
-          card.style.transform = '';
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            if (!text.includes(searchInput.value.toLowerCase().trim())) {
-              card.style.display = 'none';
-            }
-          }, 300);
-        }
-      }
-    });
-  });
-}
 
 /* ---------- HERO CAROUSEL ---------- */
 function initHeroCarousel() {

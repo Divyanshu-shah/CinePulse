@@ -22,7 +22,7 @@ Here are some of the key features of the CinePulse website:
 1. **Movie Ticket Booking**: Book movie tickets online with ease, choosing your seats and date.
 2. **Upcoming Releases**: Explore the latest movies, including upcoming releases and Hindi blockbusters.
 3. **Live Events**: Discover live music shows, comedy nights, and exhibitions near you.
-4. **About Us**: Learn about CinePulse and PVR INOX, India's largest premium film exhibition company.
+4. **About Us**: Learn about CinePulse, India's largest premium film exhibition company.
 5. **Responsive Design**: Enjoy a seamless experience across various devices, including desktops, laptops, tablets, and mobile phones.
 6. **User-Friendly Interface**: Navigate the website with ease, thanks to a simple and intuitive design.
 7. **Global Design System**: Benefit from a consistent design language, ensuring a cohesive look and feel throughout the website.

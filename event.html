@@ -26,10 +26,6 @@
       <li><a href="about.html">About Us</a></li>
     </ul>
     <div class="navbar__actions" style="display: flex; align-items: center; gap: 15px;">
-      <div class="navbar__search">
-        <span class="navbar__search-icon">🔍</span>
-        <input type="text" placeholder="Search events..." id="searchInput">
-      </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <span class="theme-toggle__icon">🌙</span>
       </button>
@@ -43,7 +39,10 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <!-- Page Header -->
-  <header class="page-hero" style="background-image: url('theater.png');">
+  <header class="page-hero page-hero--video">
+    <video class="page-hero__video" autoplay loop muted playsinline>
+      <source src="eventpagevideo.mp4" type="video/mp4">
+    </video>
     <div class="page-hero__overlay"></div>
     <div class="page-hero__content">
       <h1 class="page-hero__title">🎭 Events</h1>
@@ -61,67 +60,8 @@
           <h2 class="section-header__title">🎵 Music Shows</h2>
           <p class="section-header__subtitle">Live concerts and music festivals</p>
         </div>
-        <div class="card-grid stagger-children">
-          <a href="book.html?type=event&name=Live%20Concert&genre=Music&lang=Live&image=1.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="1.webp" alt="Music Show 1" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Live Concert</h3>
-              <p class="card__meta">Music • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Rock%20Night&genre=Music&lang=Live&image=2.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="2.webp" alt="Music Show 2" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Rock Night</h3>
-              <p class="card__meta">Music • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Jazz%20Evening&genre=Music&lang=Live&image=3.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="3.webp" alt="Music Show 3" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Jazz Evening</h3>
-              <p class="card__meta">Music • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Acoustic%20Night&genre=Music&lang=Live&image=4.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="4.webp" alt="Music Show 4" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Acoustic Night</h3>
-              <p class="card__meta">Music • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=EDM%20Festival&genre=Music&lang=Festival&image=5.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="5.webp" alt="Music Show 5" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">EDM Festival</h3>
-              <p class="card__meta">Music • Festival</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Classical%20Night&genre=Music&lang=Classical&image=16.png" class="card">
-            <div class="card__image-wrapper">
-              <img src="16.png" alt="Music Show 6" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Classical Night</h3>
-              <p class="card__meta">Music • Classical</p>
-            </div>
-          </a>
+        <div class="card-grid stagger-children" id="musicEventsGrid">
+          <!-- Dynamic Ticketmaster API cards will be inserted here -->
         </div>
       </section>
 
@@ -131,137 +71,19 @@
           <h2 class="section-header__title">😂 Comedy Shows</h2>
           <p class="section-header__subtitle">Laugh out loud with the best comedians</p>
         </div>
-        <div class="card-grid stagger-children">
-          <a href="book.html?type=event&name=Stand-Up%20Night&genre=Comedy&lang=Live&image=6.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="6.webp" alt="Comedy Show 1" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Stand-Up Night</h3>
-              <p class="card__meta">Comedy • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Comedy%20Central&genre=Comedy&lang=Live&image=7.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="7.webp" alt="Comedy Show 2" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Comedy Central</h3>
-              <p class="card__meta">Comedy • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Open%20Mic&genre=Comedy&lang=Open%20Mic&image=8.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="8.webp" alt="Comedy Show 3" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Open Mic</h3>
-              <p class="card__meta">Comedy • Open Mic</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Laugh%20Riot&genre=Comedy&lang=Live&image=9.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="9.webp" alt="Comedy Show 4" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Laugh Riot</h3>
-              <p class="card__meta">Comedy • Live</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Comedy%20Fest&genre=Comedy&lang=Festival&image=10.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="10.webp" alt="Comedy Show 5" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Comedy Fest</h3>
-              <p class="card__meta">Comedy • Festival</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Improv%20Night&genre=Comedy&lang=Improv&image=17.png" class="card">
-            <div class="card__image-wrapper">
-              <img src="17.png" alt="Comedy Show 6" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Improv Night</h3>
-              <p class="card__meta">Comedy • Improv</p>
-            </div>
-          </a>
+        <div class="card-grid stagger-children" id="comedyEventsGrid">
+          <!-- Dynamic Ticketmaster API cards will be inserted here -->
         </div>
       </section>
 
-      <!-- Exhibitions -->
+      <!-- Arts & Theatre -->
       <section class="event-section reveal">
         <div class="section-header">
-          <h2 class="section-header__title">🎨 Exhibitions</h2>
+          <h2 class="section-header__title">🎨 Arts & Theatre</h2>
           <p class="section-header__subtitle">Art, culture, and immersive experiences</p>
         </div>
-        <div class="card-grid stagger-children">
-          <a href="book.html?type=event&name=Art%20Gallery&genre=Exhibition&lang=Art&image=11.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="11.webp" alt="Exhibition 1" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Art Gallery</h3>
-              <p class="card__meta">Exhibition • Art</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Tech%20Expo&genre=Exhibition&lang=Tech&image=12.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="12.webp" alt="Exhibition 2" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Tech Expo</h3>
-              <p class="card__meta">Exhibition • Tech</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Culture%20Festival&genre=Exhibition&lang=Culture&image=13.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="13.webp" alt="Exhibition 3" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Culture Festival</h3>
-              <p class="card__meta">Exhibition • Culture</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Photo%20Exhibition&genre=Exhibition&lang=Photography&image=14.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="14.webp" alt="Exhibition 4" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Photo Exhibition</h3>
-              <p class="card__meta">Exhibition • Photography</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Heritage%20Walk&genre=Exhibition&lang=Heritage&image=15.webp" class="card">
-            <div class="card__image-wrapper">
-              <img src="15.webp" alt="Exhibition 5" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Heritage Walk</h3>
-              <p class="card__meta">Exhibition • Heritage</p>
-            </div>
-          </a>
-          <a href="book.html?type=event&name=Design%20Week&genre=Exhibition&lang=Design&image=18.png" class="card">
-            <div class="card__image-wrapper">
-              <img src="18.png" alt="Exhibition 6" loading="lazy">
-              <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
-            </div>
-            <div class="card__info">
-              <h3 class="card__title">Design Week</h3>
-              <p class="card__meta">Exhibition • Design</p>
-            </div>
-          </a>
+        <div class="card-grid stagger-children" id="artsEventsGrid">
+          <!-- Dynamic Ticketmaster API cards will be inserted here -->
         </div>
       </section>
 
@@ -310,11 +132,95 @@
       </div>
     </div>
     <div class="footer__bottom">
-      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
+      COPYRIGHT © 2023-2026 CINEPULSE. ALL RIGHTS RESERVED.
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top">↑</button>
   <script src="main.js"></script>
+  <script>
+    /* ---------- TICKETMASTER EVENTS API ---------- */
+    const TM_API_KEY = 'QH7AUkwu7wqVqMGcnCnBYGjxiDGglHtK';
+    const TM_BASE = 'https://app.ticketmaster.com/discovery/v2/events.json';
+
+    async function fetchTicketmasterEvents(classificationName, gridId, limit = 10) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+
+      // Show loading skeleton
+      grid.innerHTML = Array(limit).fill('').map(() => `
+        <div class="card" style="pointer-events:none;">
+          <div class="card__image-wrapper" style="background:var(--bg-secondary);aspect-ratio:2/3;"></div>
+          <div class="card__info">
+            <div style="height:14px;width:70%;background:var(--bg-secondary);border-radius:4px;margin-bottom:8px;"></div>
+            <div style="height:10px;width:50%;background:var(--bg-secondary);border-radius:4px;"></div>
+          </div>
+        </div>
+      `).join('');
+
+      try {
+        const url = `${TM_BASE}?apikey=${TM_API_KEY}&classificationName=${encodeURIComponent(classificationName)}&size=${limit}&sort=date,asc`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const events = data?._embedded?.events;
+        if (!events || events.length === 0) {
+          grid.innerHTML = '<p style="color:var(--text-muted); grid-column:1/-1; text-align:center;">No events found at the moment.</p>';
+          return;
+        }
+
+        grid.innerHTML = '';
+
+        events.forEach(event => {
+          const name = event.name || 'Untitled Event';
+          const genre = event.classifications?.[0]?.genre?.name || classificationName;
+          const subGenre = event.classifications?.[0]?.subGenre?.name || '';
+          const venue = event._embedded?.venues?.[0]?.name || '';
+          const city = event._embedded?.venues?.[0]?.city?.name || '';
+          const date = event.dates?.start?.localDate || '';
+
+          // Get best image (prefer 3:2 ratio, fallback to 16:9)
+          let imageUrl = '';
+          if (event.images && event.images.length > 0) {
+            const preferred = event.images.find(img => img.ratio === '3_2' && img.width >= 500)
+              || event.images.find(img => img.ratio === '16_9' && img.width >= 500)
+              || event.images[0];
+            imageUrl = preferred.url;
+          }
+
+          const formattedDate = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+          const location = [venue, city].filter(Boolean).join(', ');
+
+          const bookUrl = `book.html?type=event&name=${encodeURIComponent(name)}&genre=${encodeURIComponent(genre)}&lang=${encodeURIComponent(subGenre || genre)}&image=${encodeURIComponent(imageUrl)}`;
+
+          const cardHTML = `
+            <a href="${bookUrl}" class="card">
+              <div class="card__image-wrapper">
+                <img src="${imageUrl}" alt="${name}" loading="lazy" onerror="this.src='theater.png'">
+                <div class="card__overlay"><span class="card__overlay-btn">Book Tickets →</span></div>
+              </div>
+              <div class="card__info">
+                <h3 class="card__title">${name}</h3>
+                <p class="card__meta">${genre}${formattedDate ? ' • ' + formattedDate : ''}</p>
+                ${location ? '<p class="card__meta" style="font-size:0.72rem;margin-top:2px;">📍 ' + location + '</p>' : ''}
+              </div>
+            </a>
+          `;
+          grid.insertAdjacentHTML('beforeend', cardHTML);
+        });
+
+      } catch (error) {
+        console.error(`Failed to fetch Ticketmaster events for ${gridId}:`, error);
+        grid.innerHTML = '<p style="color:var(--text-muted); grid-column:1/-1; text-align:center;">Failed to load events. Please try again later.</p>';
+      }
+    }
+
+    // Fetch all event categories on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchTicketmasterEvents('music', 'musicEventsGrid', 10);
+      fetchTicketmasterEvents('comedy', 'comedyEventsGrid', 10);
+      fetchTicketmasterEvents('arts & theatre', 'artsEventsGrid', 10);
+    });
+  </script>
 </body>
 </html>

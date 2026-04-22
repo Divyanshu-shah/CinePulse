@@ -26,10 +26,6 @@
       <li><a href="about.html">About Us</a></li>
     </ul>
     <div class="navbar__actions" style="display: flex; align-items: center; gap: 15px;">
-      <div class="navbar__search">
-        <span class="navbar__search-icon">🔍</span>
-        <input type="text" placeholder="Search movies..." id="searchInput">
-      </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <span class="theme-toggle__icon">🌙</span>
       </button>
@@ -43,7 +39,10 @@
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <!-- Page Header -->
-  <header class="page-hero" style="background-image: url('theater.png');">
+  <header class="page-hero page-hero--video">
+    <video class="page-hero__video" autoplay loop muted playsinline>
+      <source src="moviepagevideo.mp4" type="video/mp4">
+    </video>
     <div class="page-hero__overlay"></div>
     <div class="page-hero__content">
       <h1 class="page-hero__title">🎥 Movies</h1>
@@ -133,7 +132,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      COPYRIGHT © 2023-2026 PVR INOX LIMITED. ALL RIGHTS RESERVED.
+      COPYRIGHT © 2023-2026 CINEPULSE. ALL RIGHTS RESERVED.
     </div>
   </footer>
 
